@@ -1,0 +1,6 @@
+/*.js
+# ignora todos arquivos da raíz do projeto que terminem com extensão .js
+node_modules
+# ignora todos arquivos da pasta node_modules
+dist
+# ignora todos arquivos que foram convertidos para pasta dist
