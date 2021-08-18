@@ -27,10 +27,9 @@ module.exports = {
   ],
   'rules': {
     'prettier/prettier': 'error',
-    
+    'import/prefer-default-export': 'off',
     'no-underscore-dangle': 'off',
-    
-    '@typescript-eslint/no-unused-vars': ['error', { 
+    '@typescript-eslint/no-unused-vars': ['error', {
       'argsIgnorePattern': '_'
     }],
     'class-methods-use-this': 'off',
