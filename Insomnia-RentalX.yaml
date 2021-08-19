@@ -1,8 +1,56 @@
 _type: export
 __export_format: 4
-__export_date: 2021-08-19T03:08:36.417Z
+__export_date: 2021-08-19T05:49:38.053Z
 __export_source: insomnia.desktop.app:v2021.4.1
 resources:
+  - _id: req_bb584b08df724ee095ab7263ed92d898
+    parentId: fld_1c56600910d64767ae4eee5fcb39cdf7
+    modified: 1629347814006
+    created: 1629347774870
+    url: "{{ _.baseUrl }}/v1/specifications"
+    name: Create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Câmbio automático",
+        	"description": "Carro com câmbio automático"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0c46204076e149a3913f21e44b4d55be
+    authentication: {}
+    metaSortKey: -1629347774913
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_1c56600910d64767ae4eee5fcb39cdf7
+    parentId: wrk_8fddf0ba37ea40a1b46edfa7eb1e4309
+    modified: 1629347770015
+    created: 1629347770015
+    name: Specifications
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1629347770015
+    _type: request_group
+  - _id: wrk_8fddf0ba37ea40a1b46edfa7eb1e4309
+    parentId: null
+    modified: 1629342234011
+    created: 1629342234011
+    name: RentalX
+    description: ""
+    scope: collection
+    _type: workspace
   - _id: req_b256393b125041018a57583b477827d6
     parentId: fld_efcf36e1e08843dda2d2abf1c2f28054
     modified: 1629342454756
@@ -34,17 +82,9 @@ resources:
     environmentPropertyOrder: null
     metaSortKey: -1629342239571
     _type: request_group
-  - _id: wrk_8fddf0ba37ea40a1b46edfa7eb1e4309
-    parentId: null
-    modified: 1629342234011
-    created: 1629342234011
-    name: RentalX
-    description: ""
-    scope: collection
-    _type: workspace
   - _id: req_0e91271d462b408d919df2db966d0346
     parentId: fld_efcf36e1e08843dda2d2abf1c2f28054
-    modified: 1629342476656
+    modified: 1629350943607
     created: 1629342248843
     url: "{{ _.baseUrl }}/v1/categories"
     name: Create
