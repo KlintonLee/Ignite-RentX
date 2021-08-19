@@ -29,6 +29,7 @@ module.exports = {
     'prettier/prettier': 'error',
     'import/prefer-default-export': 'off',
     'no-underscore-dangle': 'off',
+    'no-empty-function': 'off',
     '@typescript-eslint/no-unused-vars': ['error', {
       'argsIgnorePattern': '_'
     }],
