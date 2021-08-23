@@ -27,6 +27,7 @@ module.exports = {
   ],
   'rules': {
     'prettier/prettier': 'error',
+    'import/no-extraneous-dependencies': 'off', // using for typeorm (migrations only)
     'import/prefer-default-export': 'off',
     'no-underscore-dangle': 'off',
     'no-empty-function': 'off',

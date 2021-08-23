@@ -1,14 +1,9 @@
-import { Specification } from '../../models/Specification';
+import { pool } from '../../../../common/pool-connection';
+import { Specification } from '../../entities/Specification';
 import { ICreateSpecificationDTO, ISpecificationsRepository } from '../ISpecificationsRepository';
 
 class SpecificationsRepository implements ISpecificationsRepository {
-  private specifications: Array<Specification>;
-
   private static INSTANCE: SpecificationsRepository;
-
-  private constructor() {
-    this.specifications = [];
-  }
 
   static getInstance(): SpecificationsRepository {
     if (!SpecificationsRepository.INSTANCE) {
@@ -18,22 +13,28 @@ class SpecificationsRepository implements ISpecificationsRepository {
     return SpecificationsRepository.INSTANCE;
   }
 
-  create({ name, description }: ICreateSpecificationDTO): void {
-    const specification = new Specification();
-
-    Object.assign(specification, {
-      name,
-      description,
-      createAt: new Date(),
-    });
-
-    this.specifications.push(specification);
+  async create({ name, description }: ICreateSpecificationDTO): Promise<void> {
+    await pool.query(`
+      INSERT INTO categories
+        (name, description)
+      VALUES
+        ('${name}', '${description}');
+    `);
   }
 
-  findByName(name: string): Specification | undefined {
-    const findSpecification = this.specifications.find(specification => specification.name === name);
+  async findByName(name: string): Promise<Specification | undefined> {
+    const { rows } = await pool.query<Specification>(`
+      SELECT *
+      FROM   categories
+      WHERE  name = '${name}'
+      LIMIT  1;
+    `);
 
-    return findSpecification;
+    if (rows.length > 0) {
+      return rows[0];
+    }
+
+    return undefined;
   }
 }
 

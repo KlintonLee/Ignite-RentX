@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import swaggerUiExpress from 'swagger-ui-express';
 import { routes } from './routes';

@@ -1,5 +1,3 @@
-import { v1 as uuidV4 } from 'uuid';
-
 class Specification {
   id?: string;
 
@@ -8,12 +6,6 @@ class Specification {
   description!: string;
 
   createdAt!: Date;
-
-  constructor() {
-    if (!this.id) {
-      this.id = uuidV4();
-    }
-  }
 }
 
 export { Specification };
