@@ -1,6 +1,8 @@
 import 'dotenv/config';
+import 'reflect-metadata';
 import express from 'express';
 import swaggerUiExpress from 'swagger-ui-express';
+import './container';
 import { routes } from './routes';
 import swaggerDoc from './swagger.json';
 

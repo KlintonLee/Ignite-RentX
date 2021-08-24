@@ -3,16 +3,6 @@ import { Category } from '../../entities/Category';
 import { ICreateCategoryDTO, ICategoriesRepository } from '../ICategoriesRepository';
 
 class CategoriesRepository implements ICategoriesRepository {
-  private static INSTANCE: CategoriesRepository;
-
-  static getInstance(): CategoriesRepository {
-    if (!CategoriesRepository.INSTANCE) {
-      CategoriesRepository.INSTANCE = new CategoriesRepository();
-    }
-
-    return CategoriesRepository.INSTANCE;
-  }
-
   async create({ name, description }: ICreateCategoryDTO): Promise<void> {
     await pool.query(`
       INSERT INTO categories

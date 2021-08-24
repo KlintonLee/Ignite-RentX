@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import fs from 'fs';
 import csvParse from 'csv-parse';
+import { injectable, inject } from 'tsyringe';
 import { ICategoriesRepository } from '../../repositories/ICategoriesRepository';
 
 interface IImportCategory {
@@ -8,8 +9,12 @@ interface IImportCategory {
   description: string;
 }
 
+@injectable()
 class ImportCategoriesUseCase {
-  constructor(private categoriesRepository: ICategoriesRepository) {}
+  constructor(
+    @inject('CategoriesRepository')
+    private categoriesRepository: ICategoriesRepository
+  ) {}
 
   private async loadCategories(file: Express.Multer.File): Promise<IImportCategory[]> {
     const categories: Array<IImportCategory> = [];
