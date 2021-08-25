@@ -1,0 +1,259 @@
+_type: export
+__export_format: 4
+__export_date: 2021-08-31T04:11:52.130Z
+__export_source: insomnia.desktop.app:v2021.5.0
+resources:
+  - _id: req_8932f6e60b30485bb88d5fba87c245e8
+    parentId: fld_3b77fec6620c4f16930b7a1f3635b93c
+    modified: 1630383058305
+    created: 1630380051783
+    url: "{{ _.baseUrl }}/v1/users/sessions"
+    name: Authenticate
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "john.doe@email.com",
+        	"password": "123456"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_9cac2099c6c540de83e03b3ceeaadc9e
+    authentication: {}
+    metaSortKey: -1630380051783
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_3b77fec6620c4f16930b7a1f3635b93c
+    parentId: wrk_8fddf0ba37ea40a1b46edfa7eb1e4309
+    modified: 1630378336098
+    created: 1630378336098
+    name: Sessions
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1630378336098
+    _type: request_group
+  - _id: wrk_8fddf0ba37ea40a1b46edfa7eb1e4309
+    parentId: null
+    modified: 1629342234011
+    created: 1629342234011
+    name: RentalX
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_8bb854a0962b42e484fca908fe7d3b5e
+    parentId: fld_16b9a10a3f034aa5ac72c17b30953bb0
+    modified: 1630378465233
+    created: 1630378374935
+    url: "{{ _.baseUrl }}/v1/users"
+    name: Create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "John Doe",
+        	"password": "123456",
+        	"email": "john.doe@email.com",
+        	"driverLicense": "00123456789"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_534f8f8b17de484795ae6fa5cf77d8a7
+    authentication: {}
+    metaSortKey: -1630378374935
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_16b9a10a3f034aa5ac72c17b30953bb0
+    parentId: wrk_8fddf0ba37ea40a1b46edfa7eb1e4309
+    modified: 1630378294941
+    created: 1630378294941
+    name: Users
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1630378294941
+    _type: request_group
+  - _id: req_bb584b08df724ee095ab7263ed92d898
+    parentId: fld_1c56600910d64767ae4eee5fcb39cdf7
+    modified: 1630383080047
+    created: 1629347774870
+    url: "{{ _.baseUrl }}/v1/specifications"
+    name: Create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Câmbio automático2",
+        	"description": "Carro com câmbio automático"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0c46204076e149a3913f21e44b4d55be
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MzAzODMwNTksImV4cCI6MTcxNjY5NjY1OSwic3ViIjoiNzliOTFmMGQtN2VjMC00MTllLWE3NTEtNmRjYTg0NzM1MjQ1In0.9q91Ffq6YrO2nynkaie8r-UIFosXkwfZ039YamB6Kkg
+    metaSortKey: -1629347774913
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_1c56600910d64767ae4eee5fcb39cdf7
+    parentId: wrk_8fddf0ba37ea40a1b46edfa7eb1e4309
+    modified: 1629347770015
+    created: 1629347770015
+    name: Specifications
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1629347770015
+    _type: request_group
+  - _id: req_b256393b125041018a57583b477827d6
+    parentId: fld_efcf36e1e08843dda2d2abf1c2f28054
+    modified: 1629342454756
+    created: 1629342443227
+    url: "{{ _.baseUrl }}/v1/categories"
+    name: Index
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1629342443227
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_efcf36e1e08843dda2d2abf1c2f28054
+    parentId: wrk_8fddf0ba37ea40a1b46edfa7eb1e4309
+    modified: 1629342239571
+    created: 1629342239571
+    name: Categories
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1629342239571
+    _type: request_group
+  - _id: req_0e91271d462b408d919df2db966d0346
+    parentId: fld_efcf36e1e08843dda2d2abf1c2f28054
+    modified: 1629775414978
+    created: 1629342248843
+    url: "{{ _.baseUrl }}/v1/categories"
+    name: Create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "sedan",
+        	"description": "categoria SUV"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0d9b9a239c1a4d3781e6adfbbfb39d66
+    authentication: {}
+    metaSortKey: -1629342248843
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d5c98ff8da0548769e6795386803d4be
+    parentId: fld_efcf36e1e08843dda2d2abf1c2f28054
+    modified: 1630380285227
+    created: 1629430658728
+    url: "{{ _.baseUrl }}/v1/categories/import"
+    name: Import
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_a40808ba4c11494a91405539fa042a6b
+          name: file
+          value: ""
+          description: ""
+          type: file
+          fileName: C:\Users\klinton.sae\Desktop\dados.csv
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_d458c764b5824f25bdedff8e34864cf9
+    authentication: {}
+    metaSortKey: -1629342248793
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_3b49f7665f159562b83e400def94f5a7e7a22a47
+    parentId: wrk_8fddf0ba37ea40a1b46edfa7eb1e4309
+    modified: 1629342262852
+    created: 1629342234164
+    name: Base Environment
+    data:
+      baseUrl: http://localhost:3333
+    dataPropertyOrder:
+      "&":
+        - baseUrl
+    color: null
+    isPrivate: false
+    metaSortKey: 1629342234164
+    _type: environment
+  - _id: jar_3b49f7665f159562b83e400def94f5a7e7a22a47
+    parentId: wrk_8fddf0ba37ea40a1b46edfa7eb1e4309
+    modified: 1629342234165
+    created: 1629342234165
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_690ec7eee5d8457b999c7f6fd90229f7
+    parentId: wrk_8fddf0ba37ea40a1b46edfa7eb1e4309
+    modified: 1629342234016
+    created: 1629342234016
+    fileName: RentalX
+    contents: ""
+    contentType: yaml
+    _type: api_spec
