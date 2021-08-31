@@ -12,6 +12,8 @@ class User {
 
   is_admin!: boolean;
 
+  avatar!: string | null;
+
   created_at!: Date;
 
   updated_at!: Date;

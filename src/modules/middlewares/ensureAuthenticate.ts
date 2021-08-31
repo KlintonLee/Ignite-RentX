@@ -26,6 +26,10 @@ const ensureAuthenticate = async (request: Request, response: Response, next: Ne
       throw new AppError('User was not found');
     }
 
+    request.user = {
+      id: userId,
+    };
+
     next();
   } catch {
     throw new AppError('Invalid token', 401);

@@ -1,8 +1,9 @@
 import { pool } from '../../../../common/pool-connection';
 import { User } from '../../entities/User';
 import { ICreateUserDTO } from '../../dtos/ICreateUserDTO';
+import { IUsersRepository } from '../IUsersRepository';
 
-class UsersRepository {
+class UsersRepository implements IUsersRepository {
   async create({ name, password, email, driverLicense, isAdmin = false }: ICreateUserDTO): Promise<void> {
     await pool.query(`
       INSERT INTO users
@@ -39,6 +40,17 @@ class UsersRepository {
     `);
 
     return rows[0];
+  }
+
+  async updateAvatar(id: string, avatarFile: string): Promise<void> {
+    await pool.query(`
+      UPDATE
+        users
+      SET
+        avatar = '${avatarFile}'
+      WHERE
+        id = '${id}';
+    `);
   }
 }
 
