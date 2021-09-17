@@ -1,5 +1,5 @@
-import { pool } from '../../../../common/pool-connection';
-import { User } from '../../entities/User';
+import { pool } from '../../../../shared/common/pool-connection';
+import { IUser } from '../../entities/IUser';
 import { ICreateUserDTO } from '../../dtos/ICreateUserDTO';
 import { IUsersRepository } from '../IUsersRepository';
 
@@ -13,8 +13,8 @@ class UsersRepository implements IUsersRepository {
     `);
   }
 
-  async findByEmail(email: string): Promise<User | undefined> {
-    const { rows } = await pool.query<User>(`
+  async findByEmail(email: string): Promise<IUser | undefined> {
+    const { rows } = await pool.query<IUser>(`
       SELECT
         driver_license AS driverLicense,
         is_admin AS isAdmin,
@@ -28,8 +28,8 @@ class UsersRepository implements IUsersRepository {
     return rows[0];
   }
 
-  async findById(id: string): Promise<User | undefined> {
-    const { rows } = await pool.query<User>(`
+  async findById(id: string): Promise<IUser | undefined> {
+    const { rows } = await pool.query<IUser>(`
       SELECT
         driver_license AS driverLicense,
         is_admin AS isAdmin,
@@ -47,7 +47,8 @@ class UsersRepository implements IUsersRepository {
       UPDATE
         users
       SET
-        avatar = '${avatarFile}'
+        avatar = '${avatarFile}',
+        updated_at = NOW()
       WHERE
         id = '${id}';
     `);

@@ -1,7 +1,8 @@
 module.exports = {
   'env': {
     'es2021': true,
-    'node': true
+    'node': true,
+    'jest': true
   },
   'extends': [
     'airbnb-base',
@@ -23,7 +24,8 @@ module.exports = {
     'sourceType': 'module'
   },
   'plugins': [
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'import'
   ],
   'rules': {
     'prettier/prettier': 'error',
@@ -31,6 +33,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-underscore-dangle': 'off',
     'no-empty-function': 'off',
+    'import/no-unresolved': 'off',
     '@typescript-eslint/no-unused-vars': ['error', {
       'argsIgnorePattern': '_'
     }],

@@ -1,4 +1,4 @@
-import { pool } from '../../../../common/pool-connection';
+import { pool } from '../../../../shared/common/pool-connection';
 import { Specification } from '../../entities/Specification';
 import { ICreateSpecificationDTO, ISpecificationsRepository } from '../ISpecificationsRepository';
 

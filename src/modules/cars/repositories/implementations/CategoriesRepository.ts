@@ -1,4 +1,4 @@
-import { pool } from '../../../../common/pool-connection';
+import { pool } from '../../../../shared/common/pool-connection';
 import { Category } from '../../entities/Category';
 import { ICreateCategoryDTO, ICategoriesRepository } from '../ICategoriesRepository';
 

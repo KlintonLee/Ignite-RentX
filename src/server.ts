@@ -3,10 +3,10 @@ import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import swaggerUiExpress from 'swagger-ui-express';
-import './container';
-import { routes } from './routes';
+import './shared/container';
+import { AppError } from './shared/errors/AppError';
+import { routes } from './shared/routes';
 import swaggerDoc from './swagger.json';
-import { AppError } from './errors/AppError';
 
 const app = express();
 
