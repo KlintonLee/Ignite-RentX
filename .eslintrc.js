@@ -29,6 +29,7 @@ module.exports = {
   ],
   'rules': {
     'prettier/prettier': 'error',
+    'camelcase': 'off',
     'import/no-extraneous-dependencies': 'off', // using for typeorm (migrations only)
     'import/prefer-default-export': 'off',
     'no-underscore-dangle': 'off',

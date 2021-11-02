@@ -8,10 +8,9 @@
 ### Cadastro de Carros
 **RF**
 - Deve ser possível possível criar um novo carro;
-- Deve ser possível listar toads as cartegorias.
+
 **RN**
 - Não deve ser possível cadastrar um carro com uma placa já existente;
-- Não deve ser possível alterar a placa de um carro já cadastrado;
 - Novos carros devem ser cadastrados com disponibilidade true por padrão;
 - Somente usuários administradores podem cadastrar novos carros.
 

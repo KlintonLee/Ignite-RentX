@@ -4,12 +4,15 @@ import { ICreateCategoryDTO, ICategoriesRepository } from '../ICategoriesReposit
 
 class CategoriesRepository implements ICategoriesRepository {
   async create({ name, description }: ICreateCategoryDTO): Promise<void> {
-    await pool.query(`
-      INSERT INTO categories
-        (name, description)
-      VALUES
-        ('${name}','${description}');
-    `);
+    await pool.query({
+      text: `
+        INSERT INTO categories
+          (name, description)
+        VALUES
+          ($1, $2);
+      `,
+      values: [name, description],
+    });
   }
 
   async list(): Promise<Category[]> {
